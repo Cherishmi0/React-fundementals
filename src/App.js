@@ -1,10 +1,23 @@
-import NameList from './components/NameList/NameList'
+import React from 'react'
+
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
+import NameList from './components/Pages/NameList/NameList'
 import HeaderBar from './components/HeaderBar/HeaderBar'
+import Home from './components/Pages/Home/Home'
+import About from './components/Pages/About/About'
+
 function App() {
   return (
     <div>
-      <HeaderBar />
-      <NameList/>
+      <BrowserRouter>
+        <HeaderBar />
+        <Routes>        
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/namelist" element={<NameList />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

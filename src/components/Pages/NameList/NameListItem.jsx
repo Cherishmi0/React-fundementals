@@ -8,8 +8,8 @@ function NameListItem(props){
                     <img src={props.avatar} className="border rounded-circle" /> 
                 </div>
                 <div className='col-auto'>
-                    <h4>{props.name}</h4>
-                    <p>{props.city} | Email: {props.email}</p>
+                    <h6>{props.name}</h6>
+                    <span>{props.city} | Email: {props.email}</span><br />
                     <small>{moment(props.birthday).format('DD-MM-YYYY')}</small>
                 </div>
             </div>            
