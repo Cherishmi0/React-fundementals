@@ -20,6 +20,9 @@ function HeaderBar() {
                     <li className="nav-item">
                         <Link className="nav-link" to="/namelist">Show Name List</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/comment">Show Comments</Link>
+                    </li>
                 </ul>
             </div>
             </nav>

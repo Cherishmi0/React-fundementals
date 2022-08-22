@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import NameListItem from './NameListItem'
+import React, { useState, useEffect } from 'react';
+import NameListItem from './NameListItem';
+import axios from 'axios'
 function NameList(){
     const [loadData, setLoadData] = useState(new Date());
     const [nameList, setNameList] = useState([
@@ -33,15 +34,19 @@ function NameList(){
     ]);
 
     useEffect(() =>{
-        fetch("https://randomuser.me/api")
+        // fetch("https://randomuser.me/api")
+        //     .then(response => {
+        //         return response.json();
+        //     }).
+        //     then(responseData => {
+        //         setNameList(nameList => [...nameList, responseData.results[0]]);
+        //     });
+        axios.get('https://randomuser.me/api')
             .then(response => {
-                return response.json();
-            }).
-            then(responseData => {
-                console.log("2222");
-                console.log("1111");
-                setNameList(nameList => [...nameList, responseData.results[0]]);
+                console.log(response.data);
+                setNameList(nameList => [...nameList, response.data.results[0]]);
             });
+        
     },[loadData]);
 
     const nameListcomponent = () => {
