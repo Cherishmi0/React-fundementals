@@ -23,6 +23,9 @@ function HeaderBar() {
                     <li className="nav-item">
                         <Link className="nav-link" to="/comment">Show Comments</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/phonebook">Phone Book</Link>
+                    </li>
                 </ul>
             </div>
             </nav>
